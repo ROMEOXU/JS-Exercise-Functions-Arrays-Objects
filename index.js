@@ -39,9 +39,16 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+function makePersonObject(ID,Name,Email) {
   /* code here */
+  const person = {
+    id:ID,
+    name:Name,
+    email:Email
+  }
+  return person;
 }
+
 
 /**
  * ### Challenge `getName`
@@ -56,8 +63,9 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
+function getName(/* code here */name) {
   /* code here */
+  return "Hello, my name is" + this.name;
 }
 
 /**
@@ -73,8 +81,17 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+function makeSmartPerson(/* code here */Name) {
   /* code here */
+ const smart = {
+   name:Name,
+   sum:function(a,b){
+     return a+b;
+   },
+   speak:function(){
+     return "Hello, my name is" + this.name;
+   }
+ }
 }
 
 
@@ -137,6 +154,10 @@ function get3rdCar(inventory) {
 */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
+  const theIndex = inventory.find((things, num) => {
+    return num === inventory.id; 
+  })
+  return `The car is a ${theIndex.car_make} ${theIndex.car_model}`
 }
 
 /**
@@ -150,8 +171,11 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  const theLast = inventory.find((item, index) => {
+    return index === inventory.length - 1; 
+  })
+  return `The car is a ${theLast.car_make} ${theLast.car_model}`
 }
 
 /**
@@ -244,9 +268,9 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = null; // code here! const sum = (a,b) => a+b;
+const addFive = null; // code here! const addFive = num => num + 5;
+const argTimesTwo = null; // code here! = num =>num*2;
 
 /**
  * ### Challenge `carMaker`
