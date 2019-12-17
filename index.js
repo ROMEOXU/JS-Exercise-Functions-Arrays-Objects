@@ -63,9 +63,9 @@ function makePersonObject(ID,Name,Email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */name) {
+function getName(obj) {
   /* code here */
-  return "Hello, my name is" + this.name;
+  return "Hello, my name is " + obj.name;
 }
 
 /**
@@ -81,10 +81,10 @@ function getName(/* code here */name) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(Name) {
+function makeSmartPerson(myName) {
   
  const smart = {
-   name:Name,
+   name:myName,
    sum:function(a,b){
      return a+b;
    },
@@ -92,6 +92,7 @@ function makeSmartPerson(Name) {
      return "Hello, my name is" + this.name;
    }
  }
+ return smart;
 }
 
 
